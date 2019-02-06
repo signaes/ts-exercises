@@ -55,3 +55,20 @@ const h = new Human()
 h.origin = 'Earth'
 
 console.log(h.origin)
+
+class List {
+  static items: number[] = []
+  static add(a: number): List {
+    this.items = this.items.concat(a);
+
+    return this;
+  }
+}
+
+console.log(List.add(10));
+
+for (let i = 0; i < 100; i++) {
+  List.add(i);
+}
+
+console.log(List.items.length)
