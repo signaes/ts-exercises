@@ -1,5 +1,4 @@
 interface MapInterface<T> {
-  items: {[key: string]: T};
   setItem(key: string, item: T): Map<T>;
   getItem(key: string): T;
   clear(): void;
@@ -7,7 +6,7 @@ interface MapInterface<T> {
 }
 
 class Map<T> implements MapInterface<T> {
-  public items = {};
+  private items = {};
   setItem(key: string, item: T) {
     this.items[key] = item;
     return this;
